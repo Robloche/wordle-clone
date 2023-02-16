@@ -2,6 +2,7 @@ import { GAME_STATE } from "../../../constants";
 import React from "react";
 
 const Banner = ({ answer, gameState, guessCount, restartGame }) => {
+  console.log(answer);
   if (gameState === GAME_STATE.InProgress) {
     return null;
   }
@@ -9,7 +10,7 @@ const Banner = ({ answer, gameState, guessCount, restartGame }) => {
   const renderHappyBanner = () => (
     <>
       <strong>Congratulations!</strong> Got it in{" "}
-      <strong>{guessCount} guesses</strong>.
+      <strong>{guessCount} guess{guessCount > 1 && "es"}</strong>.
     </>
   );
 
@@ -19,7 +20,6 @@ const Banner = ({ answer, gameState, guessCount, restartGame }) => {
     </>
   );
 
-  //return gameState === GAME_STATE.Won ? renderHappyBanner() : renderSadBanner();
   return (
     <div className={`${gameState === GAME_STATE.Won ? "happy" : "sad"} banner`}>
       <p>{gameState === GAME_STATE.Won ? renderHappyBanner() : renderSadBanner()}</p>
