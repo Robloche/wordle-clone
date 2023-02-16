@@ -7,7 +7,7 @@ const GuessResults = ({ results }) => {
     <div className="guess-results">
       {range(0, NUM_OF_GUESSES_ALLOWED).map((row) => (
         <p className="guess" key={row}>
-          {range(0, 5).map((col) => (
+          {range(5).map((col) => (
             <span className={`cell ${results[row]?.[col].status}`} key={col}>{results[row]?.[col].letter}</span>
           ))}
         </p>
