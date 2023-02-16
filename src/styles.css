@@ -188,11 +188,14 @@ h1 {
 .keyboard > div {
     column-gap: .2rem;
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .keyboard .letter {
+    background-color: var(--color-gray-700);
     border-radius: .25rem;
-    color: white;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
@@ -200,24 +203,27 @@ h1 {
     line-height: 1.4rem;
     padding: .6rem;
     text-align: center;
+    user-select: none;
     width: 2.2rem;
 }
 
-.keyboard .letter.unused {
-    background-color: var(--color-gray-700);
-    color: black;
+.keyboard .letter.action {
+    width: 3rem;
 }
 
 .keyboard .letter.correct {
     background-color: var(--color-success);
+    color: white;
 }
 
 .keyboard .letter.incorrect {
     background-color: var(--color-gray-300);
+    color: white;
 }
 
 .keyboard .letter.misplaced {
     background-color: var(--color-warning);
+    color: white;
 }
 
 .banner {

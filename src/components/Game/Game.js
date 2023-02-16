@@ -3,7 +3,7 @@ import React from "react";
 import { GAME_STATE, LETTER_STATUS } from "../../constants";
 import Banner from "./Banner";
 import GuessInput from "./GuessInput";
-import Guess from "./Guess";
+import GuessResults from "./GuessResults";
 import { WORDS } from "../../data";
 import { sample } from "../../utils";
 import { checkGuess } from "../../game-helpers";
@@ -63,7 +63,7 @@ const Game = () => {
 
   return (
     <>
-      <Guess results={results} />
+      <GuessResults results={results} />
       <GuessInput
         gameState={gameState}
         letterStatuses={letterStatuses}

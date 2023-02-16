@@ -2,7 +2,7 @@ import { NUM_OF_GUESSES_ALLOWED } from "../../../constants";
 import React from "react";
 import { range } from "../../../utils";
 
-const Guess = ({ results }) => {
+const GuessResults = ({ results }) => {
   return (
     <div className="guess-results">
       {range(0, NUM_OF_GUESSES_ALLOWED).map((row) => (
@@ -16,4 +16,4 @@ const Guess = ({ results }) => {
   );
 };
 
-export default Guess;
+export default GuessResults;

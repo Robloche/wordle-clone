@@ -6,7 +6,7 @@ const GuessInput = ({ gameState, letterStatuses, results, submitGuess }) => {
   const [guess, setGuess] = React.useState("");
 
   const handleOnSubmit = (event) => {
-    event.preventDefault();
+    event?.preventDefault();
 
     if (guess.length < 5) {
       return;
@@ -23,6 +23,12 @@ const GuessInput = ({ gameState, letterStatuses, results, submitGuess }) => {
     }
 
     setGuess(`${guess}${letter}`);
+  };
+
+  const deleteLetter = () => {
+    if (guess.length > 0) {
+      setGuess(guess.slice(0, -1));
+    }
   };
 
   return (
@@ -44,6 +50,8 @@ const GuessInput = ({ gameState, letterStatuses, results, submitGuess }) => {
         value={guess} />
       <VirtualKeyboard
         addLetter={addLetter}
+        deleteLetter={deleteLetter}
+        submitGuess={handleOnSubmit}
         letterStatuses={letterStatuses}
         results={results} />
     </form>
