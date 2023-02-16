@@ -54,9 +54,9 @@ const Game = () => {
     setLetterStatuses(newLetterStatuses);
 
     // Check end game
-    if (lastResult.every((i) => i.status === "correct")) {
+    if (guess === answer) {
       setGameState(GAME_STATE.Won);
-    } else if (newResults.length === 6) {
+    } else if (newGuesses.length === 6) {
       setGameState(GAME_STATE.Lost);
     }
   };
